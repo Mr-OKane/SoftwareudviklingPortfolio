@@ -9,6 +9,7 @@ set(CMAKE_DEPENDS_LANGUAGES
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
   "/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/source/Monster.cpp" "CMakeFiles/MonsterGame.dir/source/Monster.cpp.o" "gcc" "CMakeFiles/MonsterGame.dir/source/Monster.cpp.o.d"
+  "/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/source/Player.cpp" "CMakeFiles/MonsterGame.dir/source/Player.cpp.o" "gcc" "CMakeFiles/MonsterGame.dir/source/Player.cpp.o.d"
   "/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/source/main.cpp" "CMakeFiles/MonsterGame.dir/source/main.cpp.o" "gcc" "CMakeFiles/MonsterGame.dir/source/main.cpp.o.d"
   "" "MonsterGame" "gcc" "CMakeFiles/MonsterGame.dir/link.d"
   )

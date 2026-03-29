@@ -27,4 +27,4 @@ bool Monster::getIsDefeated() {
     return isDefeated;
 }
 
-Monster::~Monster() {} ; 
+Monster::~Monster() {}; 

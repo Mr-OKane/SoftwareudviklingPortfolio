@@ -2,6 +2,8 @@ file(REMOVE_RECURSE
   "CMakeFiles/MonsterGame.dir/link.d"
   "CMakeFiles/MonsterGame.dir/source/Monster.cpp.o"
   "CMakeFiles/MonsterGame.dir/source/Monster.cpp.o.d"
+  "CMakeFiles/MonsterGame.dir/source/Player.cpp.o"
+  "CMakeFiles/MonsterGame.dir/source/Player.cpp.o.d"
   "CMakeFiles/MonsterGame.dir/source/main.cpp.o"
   "CMakeFiles/MonsterGame.dir/source/main.cpp.o.d"
   "MonsterGame"

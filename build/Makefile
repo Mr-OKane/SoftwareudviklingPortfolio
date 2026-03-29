@@ -153,6 +153,30 @@ source/Monster.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Monster.cpp.s
 .PHONY : source/Monster.cpp.s
 
+source/Player.o: source/Player.cpp.o
+.PHONY : source/Player.o
+
+# target to build an object file
+source/Player.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Player.cpp.o
+.PHONY : source/Player.cpp.o
+
+source/Player.i: source/Player.cpp.i
+.PHONY : source/Player.i
+
+# target to preprocess a source file
+source/Player.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Player.cpp.i
+.PHONY : source/Player.cpp.i
+
+source/Player.s: source/Player.cpp.s
+.PHONY : source/Player.s
+
+# target to generate assembly for a file
+source/Player.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Player.cpp.s
+.PHONY : source/Player.cpp.s
+
 source/main.o: source/main.cpp.o
 .PHONY : source/main.o
 
@@ -189,6 +213,9 @@ help:
 	@echo "... source/Monster.o"
 	@echo "... source/Monster.i"
 	@echo "... source/Monster.s"
+	@echo "... source/Player.o"
+	@echo "... source/Player.i"
+	@echo "... source/Player.s"
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"
