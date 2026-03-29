@@ -1,0 +1,3 @@
+/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/build/CMakeFiles/MonsterGame.dir
+/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/build/CMakeFiles/edit_cache.dir
+/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/build/CMakeFiles/rebuild_cache.dir

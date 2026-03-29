@@ -1,0 +1,1 @@
+/usr/bin/c++ -Wl,--dependency-file=CMakeFiles/MonsterGame.dir/link.d CMakeFiles/MonsterGame.dir/source/main.cpp.o CMakeFiles/MonsterGame.dir/source/Monster.cpp.o -o MonsterGame
