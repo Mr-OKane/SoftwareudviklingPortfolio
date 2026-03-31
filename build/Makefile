@@ -129,6 +129,30 @@ MonsterGame/fast:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/build
 .PHONY : MonsterGame/fast
 
+source/Battle.o: source/Battle.cpp.o
+.PHONY : source/Battle.o
+
+# target to build an object file
+source/Battle.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Battle.cpp.o
+.PHONY : source/Battle.cpp.o
+
+source/Battle.i: source/Battle.cpp.i
+.PHONY : source/Battle.i
+
+# target to preprocess a source file
+source/Battle.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Battle.cpp.i
+.PHONY : source/Battle.cpp.i
+
+source/Battle.s: source/Battle.cpp.s
+.PHONY : source/Battle.s
+
+# target to generate assembly for a file
+source/Battle.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Battle.cpp.s
+.PHONY : source/Battle.cpp.s
+
 source/Monster.o: source/Monster.cpp.o
 .PHONY : source/Monster.o
 
@@ -210,6 +234,9 @@ help:
 	@echo "... edit_cache"
 	@echo "... rebuild_cache"
 	@echo "... MonsterGame"
+	@echo "... source/Battle.o"
+	@echo "... source/Battle.i"
+	@echo "... source/Battle.s"
 	@echo "... source/Monster.o"
 	@echo "... source/Monster.i"
 	@echo "... source/Monster.s"

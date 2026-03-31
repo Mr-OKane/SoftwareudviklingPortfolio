@@ -5,6 +5,7 @@ MonsterGame: \
   CMakeFiles/MonsterGame.dir/source/main.cpp.o \
   CMakeFiles/MonsterGame.dir/source/Monster.cpp.o \
   CMakeFiles/MonsterGame.dir/source/Player.cpp.o \
+  CMakeFiles/MonsterGame.dir/source/Battle.cpp.o \
   /usr/lib/gcc/x86_64-linux-gnu/14/libstdc++.so \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libm.so \
   /usr/lib/gcc/x86_64-linux-gnu/14/../../../x86_64-linux-gnu/libm.so \
@@ -45,6 +46,8 @@ CMakeFiles/MonsterGame.dir/source/main.cpp.o:
 CMakeFiles/MonsterGame.dir/source/Monster.cpp.o:
 
 CMakeFiles/MonsterGame.dir/source/Player.cpp.o:
+
+CMakeFiles/MonsterGame.dir/source/Battle.cpp.o:
 
 /usr/lib/gcc/x86_64-linux-gnu/14/libstdc++.so:
 

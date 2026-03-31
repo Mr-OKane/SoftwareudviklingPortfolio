@@ -6,7 +6,6 @@
 
 class Monster {
     private:
-    
         std::string name;
         int health;
         int strength;

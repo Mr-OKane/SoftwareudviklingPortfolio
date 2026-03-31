@@ -7,12 +7,10 @@
 
 class Player {
     private:
-
         std::string name;
         std::vector<Monster> playerMonsters;
         
     public:
-
         Player(std::string name);
         std::string getPlayerName();
         void addMonster(Monster& target);

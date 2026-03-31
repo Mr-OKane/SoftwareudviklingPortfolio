@@ -353,6 +353,7 @@ CMakeFiles/MonsterGame.dir/source/Player.cpp.o: /home/eok/Documents/Softwareudvi
   /usr/lib/linux/uapi/x86/asm/types.h
 
 CMakeFiles/MonsterGame.dir/source/main.cpp.o: /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/main.cpp \
+  /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Battle.h \
   /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Monster.h \
   /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Player.h \
   /usr/include/alloca.h \
@@ -664,6 +665,8 @@ CMakeFiles/MonsterGame.dir/source/Player.cpp.o:
 /usr/include/c++/14/bits/basic_ios.h:
 
 /usr/include/asm-generic/int-ll64.h:
+
+/home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Battle.h:
 
 /usr/include/asm-generic/bitsperlong.h:
 
