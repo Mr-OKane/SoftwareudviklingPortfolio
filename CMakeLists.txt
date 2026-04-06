@@ -8,4 +8,5 @@ add_executable(MonsterGame
     source/Monster.cpp
     source/Player.cpp
     source/Battle.cpp
+    source/Game.cpp
 )
