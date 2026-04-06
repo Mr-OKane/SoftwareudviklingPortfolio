@@ -2,23 +2,10 @@
 #include "Monster.h"
 #include "Player.h"
 #include "Battle.h"
+#include "Game.h"
+
 int main() {
-    Player player("Emil");
-    Monster charmander("Charmander", 60, 15);
-    Monster pikachu("Pikachu", 50, 20);
-    
-    // Enemy monsters
-    Monster bulbasaur("Bulbasaur", 80, 10);
-
-    player.addMonster(charmander);
-    player.addMonster(pikachu);
-    for (Monster& m : player.getMonsters()) {
-        std::cout << m.getName() << " HP: " << m.getHealth() << std::endl;
-    }
-
-    Battle testBattle(&charmander, &bulbasaur);
-    
-    testBattle.battle();
-
+    Game game;
+    game.newGame();
     return 0;
 }
