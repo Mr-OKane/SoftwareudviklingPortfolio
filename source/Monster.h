@@ -10,6 +10,7 @@ class Monster {
         int health;
         int strength;
         bool isDefeated;
+        int maxHealth;
         
     public:
     
@@ -22,7 +23,7 @@ class Monster {
         std::string getName();
         bool getIsDefeated();
         void takeDamage(int damage);
-        
+        void resetStats();
         ~Monster();
 };
 

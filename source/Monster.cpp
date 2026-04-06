@@ -1,6 +1,6 @@
 #include "Monster.h"
 
-Monster::Monster(std::string name, int health, int strength) : name(name), health(health), strength(strength), isDefeated(false) {}
+Monster::Monster(std::string name, int health, int strength): name(name), health(health), strength(strength), isDefeated(false), maxHealth(health) {}
 
 void Monster::attack(Monster& target) {
     target.takeDamage(strength);
@@ -25,6 +25,11 @@ std::string Monster::getName() {
 }
 bool Monster::getIsDefeated() {
     return isDefeated;
+}
+
+void Monster::resetStats() {
+    health = maxHealth;
+    isDefeated = false;
 }
 
 Monster::~Monster() {}; 
