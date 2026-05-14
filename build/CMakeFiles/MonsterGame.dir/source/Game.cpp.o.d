@@ -123,9 +123,20 @@ CMakeFiles/MonsterGame.dir/source/Game.cpp.o: \
  /usr/include/c++/14/vector /usr/include/c++/14/bits/stl_uninitialized.h \
  /usr/include/c++/14/bits/stl_vector.h \
  /usr/include/c++/14/bits/stl_bvector.h \
- /usr/include/c++/14/bits/vector.tcc /usr/include/c++/14/iostream \
- /usr/include/c++/14/ostream /usr/include/c++/14/ios \
- /usr/include/c++/14/exception /usr/include/c++/14/bits/exception_ptr.h \
+ /usr/include/c++/14/bits/vector.tcc /usr/include/c++/14/algorithm \
+ /usr/include/c++/14/bits/stl_algo.h \
+ /usr/include/c++/14/bits/algorithmfwd.h \
+ /usr/include/c++/14/bits/stl_heap.h \
+ /usr/include/c++/14/bits/uniform_int_dist.h \
+ /usr/include/c++/14/bits/stl_tempbuf.h \
+ /usr/include/c++/14/pstl/glue_algorithm_defs.h \
+ /usr/include/c++/14/pstl/execution_defs.h \
+ /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Item.h \
+ /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Status.h \
+ /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Dungeon.h \
+ /usr/include/c++/14/iostream /usr/include/c++/14/ostream \
+ /usr/include/c++/14/ios /usr/include/c++/14/exception \
+ /usr/include/c++/14/bits/exception_ptr.h \
  /usr/include/c++/14/bits/cxxabi_init_exception.h \
  /usr/include/c++/14/typeinfo /usr/include/c++/14/bits/nested_exception.h \
  /usr/include/c++/14/bits/ios_base.h /usr/include/c++/14/ext/atomicity.h \
@@ -168,4 +179,7 @@ CMakeFiles/MonsterGame.dir/source/Game.cpp.o: \
  /usr/include/c++/14/bits/basic_ios.tcc \
  /usr/include/c++/14/bits/ostream.tcc /usr/include/c++/14/istream \
  /usr/include/c++/14/bits/istream.tcc \
- /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Battle.h
+ /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Battle.h \
+ /usr/include/c++/14/ctime /usr/include/c++/14/numeric \
+ /usr/include/c++/14/bits/stl_numeric.h \
+ /usr/include/c++/14/pstl/glue_numeric_defs.h
