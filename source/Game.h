@@ -3,9 +3,11 @@
 
 #include "Player.h"
 #include "Monster.h"
+#include "Dungeon.h"
 #include <vector>
 #include <iostream>
 #include <string>
+
 class Game {
 public:
     Game();
@@ -14,16 +16,21 @@ public:
 
 private:
     Player* player;
-
     std::vector<Monster> enemyMonsters;
+    std::vector<Dungeon> dungeons;
     int lastEnemyIndex;
+    int playerAverageLevel;
     
     void showMenu();
     void showAdventureMenu();
+    void showDungeonMenu();
+    void completeDungeon(Dungeon& dungeon);
+    void giveItemToMonster(Item item);
+    void generateDungeons();
+    int calculatePlayerLevel();
     Monster* chooseEnemy();
     Monster* choosePlayerMonster();
     void captureMonster(Monster& enemy);
-
-
 };
+
 #endif

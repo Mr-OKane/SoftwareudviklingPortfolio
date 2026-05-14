@@ -1,5 +1,6 @@
 #include "Player.h"
 #include <iostream>
+
 Player::Player(std::string name) : name(name) {}
 
 std::string Player::getPlayerName() {
@@ -8,7 +9,7 @@ std::string Player::getPlayerName() {
 
 void Player::addMonster(Monster& target) {
     if (playerMonsters.size() < 4) {
-    playerMonsters.push_back(target);
+        playerMonsters.push_back(target);
     }
     else {
         std::cout << "Cannot add more monsters. Limit reached! " << std::endl; 
@@ -25,11 +26,27 @@ void Player::replaceMonster(Monster& target) {
     else {
         std::cout << "Invalid index" << std::endl;
     }
-    
 }
 
 std::vector<Monster>& Player::getMonsters() {
     return playerMonsters;
+}
+
+void Player::addItem(Item item) {
+    inventory.push_back(item);
+}
+
+void Player::removeItem(std::string itemName) {
+    for (auto it = inventory.begin(); it != inventory.end(); ++it) {
+        if (it->getName() == itemName) {
+            inventory.erase(it);
+            return;
+        }
+    }
+}
+
+std::vector<Item>& Player::getInventory() {
+    return inventory;
 }
 
 bool Player::allDefeated() {
@@ -38,8 +55,7 @@ bool Player::allDefeated() {
             return false; 
         }
     }
-    return true; 
-
+    return true;
 }
 
-Player::~Player() {}; 
+Player::~Player() {};

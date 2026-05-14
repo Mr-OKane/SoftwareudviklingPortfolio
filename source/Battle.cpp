@@ -1,4 +1,5 @@
 #include "Battle.h"
+#include "Status.h"
 #include <iostream>
 #include <cstdlib>
 #include <ctime>
@@ -10,17 +11,63 @@ Battle::Battle(Monster* player, Monster* enemy)
 }
 
 void Battle::battle() {
-    bool firstMonster;
-    firstMonster = diceRoll();
-    while(battleOver != true) {
+    bool firstMonster = diceRoll();
+    std::cout << (firstMonster ? playerMonster->getName() : enemyMonster->getName()) << " goes first!" << std::endl;
+    
+    while(!battleOver) {
         if (firstMonster) {
-            executeTurn(playerMonster,enemyMonster);
+            std::cout << "\n--- " << playerMonster->getName() << "'s Turn ---" << std::endl;
+            
+            // Udføre status-effekter
+            playerMonster->executeStatusEffects();
+            
+            // Check for paralysis
+            if (isParalyzed(playerMonster)) {
+                std::cout << playerMonster->getName() << " is paralyzed and cannot move!" << std::endl;
+            } else {
+                // Spilleren vælger handling
+                ActionType action = playerChooseAction();
+                
+                if (action == ActionType::ATTACK) {
+                    executeTurn(playerMonster, enemyMonster);
+                } else if (action == ActionType::USE_ITEM) {
+                    Item* item = playerChooseItem();
+                    if (item != nullptr) {
+                        std::vector<std::string> effects = item->getStatusEffects();
+                        for (const auto& effect : effects) {
+                            if (item->doesTargetUser()) {
+                                playerMonster->addStatus(Status(effect, 3));
+                                std::cout << playerMonster->getName() << " used " << item->getName() << "!" << std::endl;
+                            } else {
+                                enemyMonster->addStatus(Status(effect, 3));
+                                std::cout << playerMonster->getName() << " used " << item->getName() << " on " << enemyMonster->getName() << "!" << std::endl;
+                            }
+                        }
+                    }
+                }
+            }
         }
         else {
-            executeTurn(enemyMonster,playerMonster);
+            std::cout << "\n--- " << enemyMonster->getName() << "'s Turn ---" << std::endl;
+            
+            // Udføre status-effekter
+            enemyMonster->executeStatusEffects();
+            
+            // Check for paralysis
+            if (isParalyzed(enemyMonster)) {
+                std::cout << enemyMonster->getName() << " is paralyzed and cannot move!" << std::endl;
+            } else {
+                executeTurn(enemyMonster, playerMonster);
+            }
         }
+        
         // Change turn
         firstMonster = !firstMonster;
+        
+        // Check hvis nogen er besejret
+        if (playerMonster->getIsDefeated() || enemyMonster->getIsDefeated()) {
+            battleOver = true;
+        }
     }
 }
 
@@ -28,10 +75,52 @@ void Battle::executeTurn(Monster* attacker, Monster* defender) {
     attacker->attack(*defender);
     std::cout << attacker->getName() << " attacked " << defender->getName() << std::endl;
     std::cout << defender->getName() << " has " << defender->getHealth() << " HP left" << std::endl;
-    if (defender->getIsDefeated()) {
-        battleOver = true;
-    }
+}
 
+ActionType Battle::playerChooseAction() {
+    int choice;
+    std::cout << "1. Attack" << std::endl;
+    std::cout << "2. Use Item" << std::endl;
+    std::cin >> choice;
+    
+    if (choice == 2) {
+        return ActionType::USE_ITEM;
+    }
+    return ActionType::ATTACK;
+}
+
+Item* Battle::playerChooseItem() {
+    std::vector<Item>& items = playerMonster->getItems();
+    
+    if (items.empty()) {
+        std::cout << "You have no items!" << std::endl;
+        return nullptr;
+    }
+    
+    std::cout << "Choose an item:" << std::endl;
+    for (size_t i = 0; i < items.size(); ++i) {
+        std::cout << i + 1 << ". " << items[i].getName() << " - " << items[i].getDescription() << std::endl;
+    }
+    
+    int choice;
+    std::cin >> choice;
+    
+    if (choice < 1 || choice > (int)items.size()) {
+        return nullptr;
+    }
+    
+    return &items[choice - 1];
+}
+
+bool Battle::isParalyzed(Monster* monster) {
+    std::vector<Status>& statuses = monster->getStatusEffects();
+    for (const auto& status : statuses) {
+        if (status.getType() == "paralysis") {
+            // 30% chance at blive paralyzeret
+            return (rand() % 100) < 30;
+        }
+    }
+    return false;
 }
 
 bool Battle::diceRoll() {
