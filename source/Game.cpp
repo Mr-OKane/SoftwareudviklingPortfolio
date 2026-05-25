@@ -7,9 +7,42 @@ Game::Game() : player(nullptr), lastEnemyIndex(-1) {
     enemyMonsters.push_back(Monster("Geodude", 90, 8));
 }
 
+void Game::mainMenu() {
+    int choice;
+
+    do {
+        std::cout << "\n===== MONSTER GAME =====" << std::endl;
+        std::cout << "1. Create New Character" << std::endl;
+        std::cout << "2. Exit" << std::endl;
+        std::cout << "Enter your choice: ";
+        std::cin >> choice;
+        std::cin.ignore();
+        
+        switch (choice) {
+            case 1:
+                createNewCharacter();
+                break;
+            case 2:
+                std::cout << "Thanks for playing!" << std::endl;
+                break;
+            default:
+                std::cout << "Invalid choice. Please try again." << std::endl;
+        }
+    }
+    while (choice != 2);
+}
+
+void Game::createNewCharacter() {
+    if (player != nullptr) {
+        delete player;
+        player = nullptr;
+    }
+    newGame();
+}
+
 void Game::newGame() {
     std::string playerName;
-    std::cout << "Enter your name: ";
+    std::cout << "\nEnter your name: ";
     std::getline(std::cin, playerName);
     player = new Player(playerName);
     Monster starter("Pikachu", 60, 20);
@@ -23,22 +56,29 @@ void Game::showMenu() {
     int choice;
 
     do {
-        std::cout << "Menu: " << std::endl;
+        std::cout << "\n===== MAIN MENU =====" << std::endl;
         std::cout << "1. Adventure" << std::endl;
-        std::cout << "2. Exit" << std::endl;
+        std::cout << "2. Create New Character" << std::endl;
+        std::cout << "3. Exit Main Menu" << std::endl;
+        std::cout << "Enter your choice: ";
         std::cin >> choice;
+        std::cin.ignore();
+        
         switch (choice) {
             case 1:
                 showAdventureMenu();
                 break;
             case 2:
-                std::cout << "Thanks for playing!" << std::endl;
+                createNewCharacter();
                 break;
+            case 3:
+                std::cout << "Returning to main menu..." << std::endl;
+                return;
             default:
                 std::cout << "Invalid choice. Please try again." << std::endl;
         }
     }
-    while (choice != 2);
+    while (choice != 3);
 } 
 
 

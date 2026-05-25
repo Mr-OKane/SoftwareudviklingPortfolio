@@ -9,6 +9,7 @@
 class Game {
 public:
     Game();
+    void mainMenu();
     void newGame();
     ~Game();
 
@@ -18,6 +19,7 @@ private:
     std::vector<Monster> enemyMonsters;
     int lastEnemyIndex;
     
+    void createNewCharacter();
     void showMenu();
     void showAdventureMenu();
     Monster* chooseEnemy();
