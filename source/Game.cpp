@@ -1,5 +1,6 @@
 #include "Game.h"
 #include "Battle.h"
+#include "Status.h"
 #include <cstdlib>
 #include <ctime>
 #include <numeric>
@@ -17,6 +18,14 @@ void Game::newGame() {
     std::getline(std::cin, playerName);
     player = new Player(playerName);
     Monster starter("Pikachu", 60, 20);
+    
+    // Add starting items to the player's inventory
+    Item smallPotion("Small Healing Potion", "Heals 25 HP", {}, true, 25);
+    Item mediumPotion("Medium Healing Potion", "Heals 50 HP", {}, true, 50);
+    player->addItem(smallPotion);
+    player->addItem(smallPotion);
+    player->addItem(mediumPotion);
+    
     player->addMonster(starter);
     
     // Generér grotter
@@ -24,6 +33,7 @@ void Game::newGame() {
     
     std::cout << "Welcome, " << player->getPlayerName() << "! Your adventure begins now!" << std::endl;
     std::cout << "You have received a starter monster: " << starter.getName() << "!" << std::endl;
+    std::cout << "Your inventory contains: 2x Small Healing Potion and 1x Medium Healing Potion!" << std::endl;
     showMenu();
 }
 
@@ -47,15 +57,7 @@ void Game::showMenu() {
                 showDungeonMenu();
                 break;
             case 3: {
-                std::cout << "\n===== INVENTORY =====" << std::endl;
-                std::vector<Item>& inventory = player->getInventory();
-                if (inventory.empty()) {
-                    std::cout << "Your inventory is empty!" << std::endl;
-                } else {
-                    for (size_t i = 0; i < inventory.size(); ++i) {
-                        std::cout << i + 1 << ". " << inventory[i].getName() << " - " << inventory[i].getDescription() << std::endl;
-                    }
-                }
+                useItemFromInventory();
                 break;
             }
             case 4:
@@ -229,6 +231,79 @@ void Game::giveItemToMonster(Item item) {
         std::cout << monsters[monsterChoice - 1].getName() << " received " << item.getName() << "!" << std::endl;
         player->removeItem(item.getName());
     }
+}
+
+void Game::useItemFromInventory() {
+    std::cout << "\n===== INVENTORY =====" << std::endl;
+    std::vector<Item>& inventory = player->getInventory();
+    
+    if (inventory.empty()) {
+        std::cout << "Your inventory is empty!" << std::endl;
+        return;
+    }
+    
+    int itemChoice;
+    do {
+        std::cout << "\nAvailable items:" << std::endl;
+        for (size_t i = 0; i < inventory.size(); ++i) {
+            std::cout << i + 1 << ". " << inventory[i].getName() << " - " << inventory[i].getDescription() << std::endl;
+        }
+        std::cout << inventory.size() + 1 << ". Back" << std::endl;
+        std::cin >> itemChoice;
+        std::cin.ignore();
+        
+        if (itemChoice == (int)inventory.size() + 1) {
+            return;
+        }
+        
+        if (itemChoice < 1 || itemChoice > (int)inventory.size()) {
+            std::cout << "Invalid choice. Please try again." << std::endl;
+            continue;
+        }
+        
+        // Show monsters to apply item to
+        std::vector<Monster>& monsters = player->getMonsters();
+        std::cout << "\nChoose a monster to use item on:" << std::endl;
+        for (size_t i = 0; i < monsters.size(); ++i) {
+            std::cout << i + 1 << ". " << monsters[i].getName() << " (HP: " << monsters[i].getHealth() << "/" << monsters[i].getMaxHealth() << ")" << std::endl;
+        }
+        
+        int monsterChoice;
+        std::cin >> monsterChoice;
+        std::cin.ignore();
+        
+        if (monsterChoice < 1 || monsterChoice > (int)monsters.size()) {
+            std::cout << "Invalid choice." << std::endl;
+            continue;
+        }
+        
+        Monster& targetMonster = monsters[monsterChoice - 1];
+        Item& item = inventory[itemChoice - 1];
+        
+        // Check if it's a healing item (targetIsUser = true, no status effects)
+        if (item.doesTargetUser() && item.getStatusEffects().empty()) {
+            int healAmount = item.getEffectPower();
+            targetMonster.heal(healAmount);
+            std::cout << "\n" << targetMonster.getName() << " used " << item.getName() << " and healed " << healAmount << " HP!" << std::endl;
+            std::cout << targetMonster.getName() << " now has " << targetMonster.getHealth() << " HP" << std::endl;
+            player->removeItem(item.getName());
+        }
+        // Check if it's a damage item (targetIsUser = false, no status effects)
+        else if (!item.doesTargetUser() && item.getStatusEffects().empty()) {
+            std::cout << "\nThis item is for use in battle, not in the inventory." << std::endl;
+        }
+        // Otherwise it's a status effect item
+        else {
+            std::vector<std::string> effects = item.getStatusEffects();
+            for (const auto& effect : effects) {
+                targetMonster.addStatus(Status(effect, 3));
+            }
+            std::cout << "\n" << targetMonster.getName() << " used " << item.getName() << "!" << std::endl;
+            player->removeItem(item.getName());
+        }
+        
+        break;  // Exit after using item
+    } while (true);
 }
 
 void Game::generateDungeons() {

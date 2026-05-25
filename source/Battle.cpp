@@ -26,13 +26,20 @@ void Battle::battle() {
                 std::cout << playerMonster->getName() << " is paralyzed and cannot move!" << std::endl;
             } else {
                 // Spilleren vælger handling
-                ActionType action = playerChooseAction();
-                
-                if (action == ActionType::ATTACK) {
-                    executeTurn(playerMonster, enemyMonster);
-                } else if (action == ActionType::USE_ITEM) {
-                    Item* item = playerChooseItem();
-                    if (item != nullptr) {
+                while (true) {
+                    ActionType action = playerChooseAction();
+                    
+                    if (action == ActionType::ATTACK) {
+                        executeTurn(playerMonster, enemyMonster);
+                        break;
+                    }
+                    else if (action == ActionType::USE_ITEM) {
+                        Item* item = playerChooseItem();
+                        if (item == nullptr) {
+                            std::cout << "Return to action menu." << std::endl;
+                            continue;
+                        }
+                        
                         std::vector<std::string> effects = item->getStatusEffects();
                         
                         // Check if it's a healing item (targetIsUser = true, no status effects)
@@ -61,8 +68,10 @@ void Battle::battle() {
                                 }
                             }
                         }
+                        break;
                     }
                 }
+
             }
         }
         else {
@@ -119,9 +128,15 @@ Item* Battle::playerChooseItem() {
     for (size_t i = 0; i < items.size(); ++i) {
         std::cout << i + 1 << ". " << items[i].getName() << " - " << items[i].getDescription() << std::endl;
     }
+    std::cout << items.size() + 1 << ". Back" << std::endl;
     
     int choice;
     std::cin >> choice;
+    
+    // Back option
+    if (choice == (int)items.size() + 1) {
+        return nullptr;  // Return nullptr to signal back/cancel
+    }
     
     if (choice < 1 || choice > (int)items.size()) {
         return nullptr;

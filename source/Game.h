@@ -26,6 +26,7 @@ private:
     void showDungeonMenu();
     void completeDungeon(Dungeon& dungeon);
     void giveItemToMonster(Item item);
+    void useItemFromInventory();
     void generateDungeons();
     int calculatePlayerLevel();
     Monster* chooseEnemy();
