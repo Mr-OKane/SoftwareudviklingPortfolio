@@ -26,4 +26,6 @@ class Item {
         ~Item();
 };
 
+Item generateRandomItem();
+
 #endif

@@ -34,13 +34,31 @@ void Battle::battle() {
                     Item* item = playerChooseItem();
                     if (item != nullptr) {
                         std::vector<std::string> effects = item->getStatusEffects();
-                        for (const auto& effect : effects) {
-                            if (item->doesTargetUser()) {
-                                playerMonster->addStatus(Status(effect, 3));
-                                std::cout << playerMonster->getName() << " used " << item->getName() << "!" << std::endl;
-                            } else {
-                                enemyMonster->addStatus(Status(effect, 3));
-                                std::cout << playerMonster->getName() << " used " << item->getName() << " on " << enemyMonster->getName() << "!" << std::endl;
+                        
+                        // Check if it's a healing item (targetIsUser = true, no status effects)
+                        if (item->doesTargetUser() && effects.empty()) {
+                            int healAmount = item->getEffectPower();
+                            playerMonster->heal(healAmount);
+                            std::cout << playerMonster->getName() << " used " << item->getName() << " and healed " << healAmount << " HP!" << std::endl;
+                            std::cout << playerMonster->getName() << " now has " << playerMonster->getHealth() << " HP" << std::endl;
+                        }
+                        // Check if it's a damage item (targetIsUser = false, no status effects)
+                        else if (!item->doesTargetUser() && effects.empty()) {
+                            int damage = item->getEffectPower();
+                            enemyMonster->takeDamage(damage);
+                            std::cout << playerMonster->getName() << " used " << item->getName() << " on " << enemyMonster->getName() << " for " << damage << " damage!" << std::endl;
+                            std::cout << enemyMonster->getName() << " now has " << enemyMonster->getHealth() << " HP" << std::endl;
+                        }
+                        // Otherwise it's a status effect item
+                        else {
+                            for (const auto& effect : effects) {
+                                if (item->doesTargetUser()) {
+                                    playerMonster->addStatus(Status(effect, 3));
+                                    std::cout << playerMonster->getName() << " used " << item->getName() << "!" << std::endl;
+                                } else {
+                                    enemyMonster->addStatus(Status(effect, 3));
+                                    std::cout << playerMonster->getName() << " used " << item->getName() << " on " << enemyMonster->getName() << "!" << std::endl;
+                                }
                             }
                         }
                     }

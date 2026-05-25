@@ -80,4 +80,11 @@ void Monster::resetStats() {
     statusEffects.clear();
 }
 
+void Monster::heal(int amount) {
+    health += amount;
+    if (health > maxHealth) {
+        health = maxHealth;
+    }
+}
+
 Monster::~Monster() {}

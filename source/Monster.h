@@ -35,6 +35,7 @@ class Monster {
         std::vector<Item>& getItems();
         std::vector<Status>& getStatusEffects();
         void resetStats();
+        void heal(int amount);
         ~Monster();
 };
 
