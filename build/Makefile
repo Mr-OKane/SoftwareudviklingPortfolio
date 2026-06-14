@@ -153,6 +153,30 @@ source/Battle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Battle.cpp.s
 .PHONY : source/Battle.cpp.s
 
+source/Dungeon.o: source/Dungeon.cpp.o
+.PHONY : source/Dungeon.o
+
+# target to build an object file
+source/Dungeon.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.o
+.PHONY : source/Dungeon.cpp.o
+
+source/Dungeon.i: source/Dungeon.cpp.i
+.PHONY : source/Dungeon.i
+
+# target to preprocess a source file
+source/Dungeon.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.i
+.PHONY : source/Dungeon.cpp.i
+
+source/Dungeon.s: source/Dungeon.cpp.s
+.PHONY : source/Dungeon.s
+
+# target to generate assembly for a file
+source/Dungeon.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.s
+.PHONY : source/Dungeon.cpp.s
+
 source/Game.o: source/Game.cpp.o
 .PHONY : source/Game.o
 
@@ -176,6 +200,30 @@ source/Game.s: source/Game.cpp.s
 source/Game.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Game.cpp.s
 .PHONY : source/Game.cpp.s
+
+source/Item.o: source/Item.cpp.o
+.PHONY : source/Item.o
+
+# target to build an object file
+source/Item.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Item.cpp.o
+.PHONY : source/Item.cpp.o
+
+source/Item.i: source/Item.cpp.i
+.PHONY : source/Item.i
+
+# target to preprocess a source file
+source/Item.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Item.cpp.i
+.PHONY : source/Item.cpp.i
+
+source/Item.s: source/Item.cpp.s
+.PHONY : source/Item.s
+
+# target to generate assembly for a file
+source/Item.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Item.cpp.s
+.PHONY : source/Item.cpp.s
 
 source/Monster.o: source/Monster.cpp.o
 .PHONY : source/Monster.o
@@ -225,6 +273,30 @@ source/Player.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Player.cpp.s
 .PHONY : source/Player.cpp.s
 
+source/Status.o: source/Status.cpp.o
+.PHONY : source/Status.o
+
+# target to build an object file
+source/Status.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Status.cpp.o
+.PHONY : source/Status.cpp.o
+
+source/Status.i: source/Status.cpp.i
+.PHONY : source/Status.i
+
+# target to preprocess a source file
+source/Status.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Status.cpp.i
+.PHONY : source/Status.cpp.i
+
+source/Status.s: source/Status.cpp.s
+.PHONY : source/Status.s
+
+# target to generate assembly for a file
+source/Status.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Status.cpp.s
+.PHONY : source/Status.cpp.s
+
 source/main.o: source/main.cpp.o
 .PHONY : source/main.o
 
@@ -261,15 +333,24 @@ help:
 	@echo "... source/Battle.o"
 	@echo "... source/Battle.i"
 	@echo "... source/Battle.s"
+	@echo "... source/Dungeon.o"
+	@echo "... source/Dungeon.i"
+	@echo "... source/Dungeon.s"
 	@echo "... source/Game.o"
 	@echo "... source/Game.i"
 	@echo "... source/Game.s"
+	@echo "... source/Item.o"
+	@echo "... source/Item.i"
+	@echo "... source/Item.s"
 	@echo "... source/Monster.o"
 	@echo "... source/Monster.i"
 	@echo "... source/Monster.s"
 	@echo "... source/Player.o"
 	@echo "... source/Player.i"
 	@echo "... source/Player.s"
+	@echo "... source/Status.o"
+	@echo "... source/Status.i"
+	@echo "... source/Status.s"
 	@echo "... source/main.o"
 	@echo "... source/main.i"
 	@echo "... source/main.s"

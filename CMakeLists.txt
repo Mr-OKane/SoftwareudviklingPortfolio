@@ -9,4 +9,7 @@ add_executable(MonsterGame
     source/Player.cpp
     source/Battle.cpp
     source/Game.cpp
+    source/Item.cpp
+    source/Status.cpp
+    source/Dungeon.cpp
 )

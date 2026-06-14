@@ -142,13 +142,58 @@ CMakeFiles/MonsterGame.dir/source/Game.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MonsterGame.dir/source/Game.cpp.s"
 	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/source/Game.cpp" -o CMakeFiles/MonsterGame.dir/source/Game.cpp.s
 
+CMakeFiles/MonsterGame.dir/source/Item.cpp.o: CMakeFiles/MonsterGame.dir/flags.make
+CMakeFiles/MonsterGame.dir/source/Item.cpp.o: /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Item.cpp
+CMakeFiles/MonsterGame.dir/source/Item.cpp.o: CMakeFiles/MonsterGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/MonsterGame.dir/source/Item.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MonsterGame.dir/source/Item.cpp.o -MF CMakeFiles/MonsterGame.dir/source/Item.cpp.o.d -o CMakeFiles/MonsterGame.dir/source/Item.cpp.o -c "/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/source/Item.cpp"
+
+CMakeFiles/MonsterGame.dir/source/Item.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MonsterGame.dir/source/Item.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/source/Item.cpp" > CMakeFiles/MonsterGame.dir/source/Item.cpp.i
+
+CMakeFiles/MonsterGame.dir/source/Item.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MonsterGame.dir/source/Item.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/source/Item.cpp" -o CMakeFiles/MonsterGame.dir/source/Item.cpp.s
+
+CMakeFiles/MonsterGame.dir/source/Status.cpp.o: CMakeFiles/MonsterGame.dir/flags.make
+CMakeFiles/MonsterGame.dir/source/Status.cpp.o: /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Status.cpp
+CMakeFiles/MonsterGame.dir/source/Status.cpp.o: CMakeFiles/MonsterGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/MonsterGame.dir/source/Status.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MonsterGame.dir/source/Status.cpp.o -MF CMakeFiles/MonsterGame.dir/source/Status.cpp.o.d -o CMakeFiles/MonsterGame.dir/source/Status.cpp.o -c "/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/source/Status.cpp"
+
+CMakeFiles/MonsterGame.dir/source/Status.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MonsterGame.dir/source/Status.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/source/Status.cpp" > CMakeFiles/MonsterGame.dir/source/Status.cpp.i
+
+CMakeFiles/MonsterGame.dir/source/Status.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MonsterGame.dir/source/Status.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/source/Status.cpp" -o CMakeFiles/MonsterGame.dir/source/Status.cpp.s
+
+CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.o: CMakeFiles/MonsterGame.dir/flags.make
+CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.o: /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Dungeon.cpp
+CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.o: CMakeFiles/MonsterGame.dir/compiler_depend.ts
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --progress-dir="/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.o"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.o -MF CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.o.d -o CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.o -c "/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/source/Dungeon.cpp"
+
+CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Preprocessing CXX source to CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.i"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E "/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/source/Dungeon.cpp" > CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.i
+
+CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green "Compiling CXX source to assembly CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.s"
+	/usr/bin/c++ $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S "/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/source/Dungeon.cpp" -o CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.s
+
 # Object files for target MonsterGame
 MonsterGame_OBJECTS = \
 "CMakeFiles/MonsterGame.dir/source/main.cpp.o" \
 "CMakeFiles/MonsterGame.dir/source/Monster.cpp.o" \
 "CMakeFiles/MonsterGame.dir/source/Player.cpp.o" \
 "CMakeFiles/MonsterGame.dir/source/Battle.cpp.o" \
-"CMakeFiles/MonsterGame.dir/source/Game.cpp.o"
+"CMakeFiles/MonsterGame.dir/source/Game.cpp.o" \
+"CMakeFiles/MonsterGame.dir/source/Item.cpp.o" \
+"CMakeFiles/MonsterGame.dir/source/Status.cpp.o" \
+"CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.o"
 
 # External object files for target MonsterGame
 MonsterGame_EXTERNAL_OBJECTS =
@@ -158,10 +203,13 @@ MonsterGame: CMakeFiles/MonsterGame.dir/source/Monster.cpp.o
 MonsterGame: CMakeFiles/MonsterGame.dir/source/Player.cpp.o
 MonsterGame: CMakeFiles/MonsterGame.dir/source/Battle.cpp.o
 MonsterGame: CMakeFiles/MonsterGame.dir/source/Game.cpp.o
+MonsterGame: CMakeFiles/MonsterGame.dir/source/Item.cpp.o
+MonsterGame: CMakeFiles/MonsterGame.dir/source/Status.cpp.o
+MonsterGame: CMakeFiles/MonsterGame.dir/source/Dungeon.cpp.o
 MonsterGame: CMakeFiles/MonsterGame.dir/build.make
 MonsterGame: CMakeFiles/MonsterGame.dir/compiler_depend.ts
 MonsterGame: CMakeFiles/MonsterGame.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_6) "Linking CXX executable MonsterGame"
+	@$(CMAKE_COMMAND) -E cmake_echo_color "--switch=$(COLOR)" --green --bold --progress-dir="/home/eok/Documents/Softwareudvikling/Portfolio project/SoftwareudviklingPortfolio/build/CMakeFiles" --progress-num=$(CMAKE_PROGRESS_9) "Linking CXX executable MonsterGame"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles/MonsterGame.dir/link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

@@ -1,7 +1,7 @@
-CMakeFiles/MonsterGame.dir/source/Monster.cpp.o: \
- /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Monster.cpp \
+CMakeFiles/MonsterGame.dir/source/Status.cpp.o: \
+ /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Status.cpp \
  /usr/include/stdc-predef.h \
- /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Monster.h \
+ /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Status.h \
  /usr/include/c++/14/string /usr/include/c++/14/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/14/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/14/bits/os_defines.h \
@@ -118,6 +118,7 @@ CMakeFiles/MonsterGame.dir/source/Monster.cpp.o: \
  /usr/include/c++/14/bits/memory_resource.h /usr/include/c++/14/cstddef \
  /usr/include/c++/14/bits/uses_allocator.h \
  /usr/include/c++/14/bits/uses_allocator_args.h /usr/include/c++/14/tuple \
+ /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Monster.h \
  /usr/include/c++/14/vector /usr/include/c++/14/bits/stl_uninitialized.h \
  /usr/include/c++/14/bits/stl_vector.h \
  /usr/include/c++/14/bits/stl_bvector.h \
@@ -130,7 +131,6 @@ CMakeFiles/MonsterGame.dir/source/Monster.cpp.o: \
  /usr/include/c++/14/pstl/glue_algorithm_defs.h \
  /usr/include/c++/14/pstl/execution_defs.h \
  /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Item.h \
- /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Status.h \
  /usr/include/c++/14/iostream /usr/include/c++/14/ostream \
  /usr/include/c++/14/ios /usr/include/c++/14/exception \
  /usr/include/c++/14/bits/exception_ptr.h \
