@@ -1,9 +1,8 @@
-CMakeFiles/MonsterGame.dir/source/Game.cpp.o: \
- /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Game.cpp \
+CMakeFiles/MonsterGame.dir/source/Database.cpp.o: \
+ /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Database.cpp \
  /usr/include/stdc-predef.h \
- /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Game.h \
- /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Player.h \
- /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Monster.h \
+ /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Database.h \
+ /usr/include/sqlite3.h /usr/lib/gcc/x86_64-linux-gnu/14/include/stdarg.h \
  /usr/include/c++/14/string /usr/include/c++/14/bits/requires_hosted.h \
  /usr/include/x86_64-linux-gnu/c++/14/bits/c++config.h \
  /usr/include/x86_64-linux-gnu/c++/14/bits/os_defines.h \
@@ -25,7 +24,6 @@ CMakeFiles/MonsterGame.dir/source/Game.cpp.o: \
  /usr/include/x86_64-linux-gnu/bits/floatn.h \
  /usr/include/x86_64-linux-gnu/bits/floatn-common.h \
  /usr/lib/gcc/x86_64-linux-gnu/14/include/stddef.h \
- /usr/lib/gcc/x86_64-linux-gnu/14/include/stdarg.h \
  /usr/include/x86_64-linux-gnu/bits/wchar.h \
  /usr/include/x86_64-linux-gnu/bits/types/wint_t.h \
  /usr/include/x86_64-linux-gnu/bits/types/mbstate_t.h \
@@ -123,8 +121,16 @@ CMakeFiles/MonsterGame.dir/source/Game.cpp.o: \
  /usr/include/c++/14/vector /usr/include/c++/14/bits/stl_uninitialized.h \
  /usr/include/c++/14/bits/stl_vector.h \
  /usr/include/c++/14/bits/stl_bvector.h \
- /usr/include/c++/14/bits/vector.tcc /usr/include/c++/14/algorithm \
- /usr/include/c++/14/bits/stl_algo.h \
+ /usr/include/c++/14/bits/vector.tcc /usr/include/c++/14/map \
+ /usr/include/c++/14/bits/stl_tree.h \
+ /usr/include/c++/14/ext/aligned_buffer.h \
+ /usr/include/c++/14/bits/node_handle.h \
+ /usr/include/c++/14/bits/stl_map.h \
+ /usr/include/c++/14/bits/stl_multimap.h \
+ /usr/include/c++/14/bits/erase_if.h \
+ /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Player.h \
+ /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Monster.h \
+ /usr/include/c++/14/algorithm /usr/include/c++/14/bits/stl_algo.h \
  /usr/include/c++/14/bits/algorithmfwd.h \
  /usr/include/c++/14/bits/stl_heap.h \
  /usr/include/c++/14/bits/uniform_int_dist.h \
@@ -133,17 +139,9 @@ CMakeFiles/MonsterGame.dir/source/Game.cpp.o: \
  /usr/include/c++/14/pstl/execution_defs.h \
  /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Item.h \
  /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Status.h \
- /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Dungeon.h \
- /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Database.h \
- /usr/include/sqlite3.h /usr/include/c++/14/map \
- /usr/include/c++/14/bits/stl_tree.h \
- /usr/include/c++/14/ext/aligned_buffer.h \
- /usr/include/c++/14/bits/node_handle.h \
- /usr/include/c++/14/bits/stl_map.h \
- /usr/include/c++/14/bits/stl_multimap.h \
- /usr/include/c++/14/bits/erase_if.h /usr/include/c++/14/iostream \
- /usr/include/c++/14/ostream /usr/include/c++/14/ios \
- /usr/include/c++/14/exception /usr/include/c++/14/bits/exception_ptr.h \
+ /usr/include/c++/14/iostream /usr/include/c++/14/ostream \
+ /usr/include/c++/14/ios /usr/include/c++/14/exception \
+ /usr/include/c++/14/bits/exception_ptr.h \
  /usr/include/c++/14/bits/cxxabi_init_exception.h \
  /usr/include/c++/14/typeinfo /usr/include/c++/14/bits/nested_exception.h \
  /usr/include/c++/14/bits/ios_base.h /usr/include/c++/14/ext/atomicity.h \
@@ -185,8 +183,5 @@ CMakeFiles/MonsterGame.dir/source/Game.cpp.o: \
  /usr/include/c++/14/bits/locale_facets.tcc \
  /usr/include/c++/14/bits/basic_ios.tcc \
  /usr/include/c++/14/bits/ostream.tcc /usr/include/c++/14/istream \
- /usr/include/c++/14/bits/istream.tcc \
- /home/eok/Documents/Softwareudvikling/Portfolio\ project/SoftwareudviklingPortfolio/source/Battle.h \
- /usr/include/c++/14/ctime /usr/include/c++/14/numeric \
- /usr/include/c++/14/bits/stl_numeric.h \
- /usr/include/c++/14/pstl/glue_numeric_defs.h
+ /usr/include/c++/14/bits/istream.tcc /usr/include/c++/14/sstream \
+ /usr/include/c++/14/bits/sstream.tcc
