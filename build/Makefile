@@ -153,6 +153,30 @@ source/Battle.cpp.s:
 	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Battle.cpp.s
 .PHONY : source/Battle.cpp.s
 
+source/Database.o: source/Database.cpp.o
+.PHONY : source/Database.o
+
+# target to build an object file
+source/Database.cpp.o:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Database.cpp.o
+.PHONY : source/Database.cpp.o
+
+source/Database.i: source/Database.cpp.i
+.PHONY : source/Database.i
+
+# target to preprocess a source file
+source/Database.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Database.cpp.i
+.PHONY : source/Database.cpp.i
+
+source/Database.s: source/Database.cpp.s
+.PHONY : source/Database.s
+
+# target to generate assembly for a file
+source/Database.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles/MonsterGame.dir/build.make CMakeFiles/MonsterGame.dir/source/Database.cpp.s
+.PHONY : source/Database.cpp.s
+
 source/Dungeon.o: source/Dungeon.cpp.o
 .PHONY : source/Dungeon.o
 
@@ -333,6 +357,9 @@ help:
 	@echo "... source/Battle.o"
 	@echo "... source/Battle.i"
 	@echo "... source/Battle.s"
+	@echo "... source/Database.o"
+	@echo "... source/Database.i"
+	@echo "... source/Database.s"
 	@echo "... source/Dungeon.o"
 	@echo "... source/Dungeon.i"
 	@echo "... source/Dungeon.s"

@@ -17,9 +17,9 @@ class Item {
         Item(std::string name, std::string description, std::vector<std::string> statusEffects);
         Item(std::string name, std::string description, std::vector<std::string> statusEffects, bool user, int power);
         
-        std::string getName();
-        std::string getDescription();
-        std::vector<std::string> getStatusEffects();
+        std::string getName() const;
+        std::string getDescription() const;
+        std::vector<std::string> getStatusEffects() const;
         bool doesTargetUser() const;
         int getEffectPower() const;
         

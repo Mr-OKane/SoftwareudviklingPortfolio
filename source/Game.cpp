@@ -5,7 +5,7 @@
 #include <ctime>
 #include <numeric>
 
-Game::Game() : player(nullptr), lastEnemyIndex(-1), playerAverageLevel(1) {
+Game::Game() : player(nullptr), lastEnemyIndex(-1), playerAverageLevel(1), currentHeroId(-1) {
     srand(time(0));
     enemyMonsters.push_back(Monster("Bulbasaur", 80, 10));
     enemyMonsters.push_back(Monster("Squirtle", 70, 12));
@@ -13,28 +13,36 @@ Game::Game() : player(nullptr), lastEnemyIndex(-1), playerAverageLevel(1) {
 }
 
 void Game::mainMenu() {
+    if (!database.open("monster_game.db")) {
+        std::cerr << "Warning: database could not be opened. Save/load disabled." << std::endl;
+    }
+
     int choice;
 
     do {
         std::cout << "\n===== MONSTER GAME =====" << std::endl;
-        std::cout << "1. Create New Character" << std::endl;
-        std::cout << "2. Exit" << std::endl;
+        std::cout << "1. Load Saved Game" << std::endl;
+        std::cout << "2. Create New Character" << std::endl;
+        std::cout << "3. Exit" << std::endl;
         std::cout << "Enter your choice: ";
         std::cin >> choice;
         std::cin.ignore();
         
         switch (choice) {
             case 1:
-                createNewCharacter();
+                showLoadMenu();
                 break;
             case 2:
+                createNewCharacter();
+                break;
+            case 3:
                 std::cout << "Thanks for playing!" << std::endl;
                 break;
             default:
                 std::cout << "Invalid choice. Please try again." << std::endl;
         }
     }
-    while (choice != 2);
+    while (choice != 3);
 }
 
 void Game::createNewCharacter() {
@@ -42,7 +50,118 @@ void Game::createNewCharacter() {
         delete player;
         player = nullptr;
     }
+    currentHeroId = -1;
     newGame();
+}
+
+void Game::showLoadMenu() {
+    std::vector<HeroSummary> heroes = database.listHeroes();
+
+    if (heroes.empty()) {
+        std::cout << "No saved heroes found. Create a new character instead." << std::endl;
+        return;
+    }
+
+    std::cout << "\n===== LOAD SAVED GAME =====" << std::endl;
+    for (size_t i = 0; i < heroes.size(); ++i) {
+        std::cout << i + 1 << ". " << heroes[i].name << std::endl;
+    }
+    std::cout << heroes.size() + 1 << ". Back" << std::endl;
+
+    int choice;
+    std::cin >> choice;
+    std::cin.ignore();
+
+    if (choice == (int)heroes.size() + 1) {
+        return;
+    }
+    if (choice < 1 || choice > (int)heroes.size()) {
+        std::cout << "Invalid choice." << std::endl;
+        return;
+    }
+
+    int heroId = heroes[choice - 1].id;
+    if (player != nullptr) {
+        delete player;
+        player = nullptr;
+    }
+
+    if (!database.loadHero(heroId, player)) {
+        std::cout << "Failed to load saved hero." << std::endl;
+        return;
+    }
+
+    currentHeroId = heroId;
+    generateDungeons();
+    std::cout << "Welcome back, " << player->getPlayerName() << "!" << std::endl;
+    showMenu();
+}
+
+void Game::saveGame() {
+    if (player == nullptr) {
+        std::cout << "No active game to save." << std::endl;
+        return;
+    }
+
+    if (!database.saveHero(*player, currentHeroId)) {
+        std::cout << "Unable to save the game." << std::endl;
+        return;
+    }
+
+    std::cout << "Game saved successfully." << std::endl;
+}
+
+void Game::showStatistics() {
+    if (player == nullptr) {
+        std::cout << "No active character. Start or load a game first." << std::endl;
+        return;
+    }
+
+    std::vector<Monster>& monsters = player->getMonsters();
+    std::vector<Item>& inventory = player->getInventory();
+
+    int totalMonsters = static_cast<int>(monsters.size());
+    int defeatedCount = 0;
+    int totalHealth = 0;
+    int totalStrength = 0;
+    int activeMonsters = 0;
+
+    for (const Monster& monster : monsters) {
+        if (monster.getIsDefeated()) {
+            defeatedCount++;
+        } else {
+            activeMonsters++;
+        }
+        totalHealth += monster.getHealth();
+        totalStrength += monster.getStrength();
+    }
+
+    double averageHealth = totalMonsters > 0 ? static_cast<double>(totalHealth) / totalMonsters : 0.0;
+    double averageStrength = totalMonsters > 0 ? static_cast<double>(totalStrength) / totalMonsters : 0.0;
+
+    std::cout << "\n===== PLAYER STATISTICS =====" << std::endl;
+    std::cout << "Name: " << player->getPlayerName() << std::endl;
+    std::cout << "Monsters owned: " << totalMonsters << std::endl;
+    std::cout << "Active monsters: " << activeMonsters << std::endl;
+    std::cout << "Defeated monsters: " << defeatedCount << std::endl;
+    std::cout << "Total monster HP: " << totalHealth << std::endl;
+    std::cout << "Average monster HP: " << static_cast<int>(averageHealth) << std::endl;
+    std::cout << "Average monster strength: " << static_cast<int>(averageStrength) << std::endl;
+    std::cout << "Inventory size: " << inventory.size() << std::endl;
+
+    std::map<std::string, int> itemCounts;
+    for (const Item& item : inventory) {
+        itemCounts[item.getName()]++;
+    }
+
+    if (!itemCounts.empty()) {
+        std::cout << "Inventory items:" << std::endl;
+        for (const auto& entry : itemCounts) {
+            std::cout << " - " << entry.first << ": " << entry.second << std::endl;
+        }
+    } else {
+        std::cout << "Inventory items: None" << std::endl;
+    }
 }
 
 void Game::newGame() {
@@ -78,7 +197,9 @@ void Game::showMenu() {
         std::cout << "1. Adventure" << std::endl;
         std::cout << "2. Dungeons" << std::endl;
         std::cout << "3. View Inventory" << std::endl;
-        std::cout << "4. Exit" << std::endl;
+        std::cout << "4. Statistics" << std::endl;
+        std::cout << "5. Save Game" << std::endl;
+        std::cout << "6. Exit" << std::endl;
         std::cin >> choice;
         std::cin.ignore();  // Clear newline from buffer
         
@@ -89,21 +210,23 @@ void Game::showMenu() {
             case 2:
                 showDungeonMenu();
                 break;
-            case 3: {
+            case 3:
                 useItemFromInventory();
                 break;
-            }
             case 4:
-                std::cout << "Thanks for playing!" << std::endl;
+                showStatistics();
                 break;
             case 5:
-                std::cout << "Returning to main menu..." << std::endl;
-                return;
+                saveGame();
+                break;
+            case 6:
+                std::cout << "Thanks for playing!" << std::endl;
+                break;
             default:
                 std::cout << "Invalid choice. Please try again." << std::endl;
         }
     }
-    while (choice != 4);
+    while (choice != 6);
 }
 
 void Game::showAdventureMenu() {

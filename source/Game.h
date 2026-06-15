@@ -4,6 +4,7 @@
 #include "Player.h"
 #include "Monster.h"
 #include "Dungeon.h"
+#include "Database.h"
 #include <vector>
 #include <iostream>
 #include <string>
@@ -21,6 +22,8 @@ private:
     std::vector<Dungeon> dungeons;
     int lastEnemyIndex;
     int playerAverageLevel;
+    int currentHeroId;
+    DatabaseManager database;
     
     void createNewCharacter();
     void showMenu();
@@ -34,6 +37,9 @@ private:
     Monster* chooseEnemy();
     Monster* choosePlayerMonster();
     void captureMonster(Monster& enemy);
+    void showLoadMenu();
+    void showStatistics();
+    void saveGame();
 };
 
 #endif

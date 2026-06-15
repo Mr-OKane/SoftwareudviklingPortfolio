@@ -3,6 +3,8 @@ project(MonsterGame)
 
 set(CMAKE_CXX_STANDARD 17)
 
+find_package(SQLite3 REQUIRED)
+
 add_executable(MonsterGame
     source/main.cpp
     source/Monster.cpp
@@ -12,4 +14,7 @@ add_executable(MonsterGame
     source/Item.cpp
     source/Status.cpp
     source/Dungeon.cpp
+    source/Database.cpp
 )
+
+target_link_libraries(MonsterGame PRIVATE SQLite::SQLite3)
